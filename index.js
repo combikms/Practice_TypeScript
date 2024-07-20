@@ -1,16 +1,12 @@
-let username = 'kim';
-const arr = ['Park', 'Hong'];
-const obj = { name: 'kwon' };
-let gender = 'male';
-gender = 2;
-function foo(x) {
-    return x * 2;
-}
-const john = [1, true];
-const mary = { name: "koo" };
-class User {
-    name;
-    constructor(name) {
-        this.name = name;
+function foo(arr) {
+    for (let i = 0; i < arr.length; i++) {
+        let temp = arr[i];
+        if (typeof temp === 'string') {
+            arr[i] = parseInt(temp);
+        }
     }
 }
+const arr = ['1', 2, '3'];
+console.log(arr);
+foo(arr);
+console.log(arr);
