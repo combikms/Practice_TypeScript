@@ -1,13 +1,19 @@
-function foo(arr: (number | string)[]): void {
-    for (let i = 0; i < arr.length; i++) {
-        let temp = arr[i]
-        if (typeof temp === 'string') {
-            arr[i] = parseInt(temp)
-        }
+function foo(obj: { subject: string | string[] }): string {
+
+    if (typeof obj.subject === 'string') {
+        return obj.subject
+    } else {
+        return obj.subject[obj.subject.length - 1]
     }
 }
 
-const arr: (number | string)[] = ['1', 2, '3']
-console.log(arr)
-foo(arr)
-console.log(arr)
+
+const 철수쌤 = { subject: 'math' }
+const 영희쌤 = { subject: ['science', 'english'] }
+const 민수쌤 = { subject: ['science', 'art', 'korean'] }
+const strange = { hello: 'hi' }
+
+console.log(foo(철수쌤))
+console.log(foo(영희쌤))
+console.log(foo(민수쌤))
+// console.log(foo(strange))
