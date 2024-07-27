@@ -1,19 +1,29 @@
-function foo(obj: { subject: string | string[] }): string {
+type Mytype = string | number | undefined;
+let a: Mytype = 'a';
+let b: Mytype = 1;
 
-    if (typeof obj.subject === 'string') {
-        return obj.subject
-    } else {
-        return obj.subject[obj.subject.length - 1]
-    }
+type Gf = {
+    readonly name: string,
+    age: number,
+    region?: string
+};
+
+const gf: Gf = {
+    name: "Sena",
+    age: 22
 }
 
+gf.name = 'Samantha' // Error
 
-const 철수쌤 = { subject: 'math' }
-const 영희쌤 = { subject: ['science', 'english'] }
-const 민수쌤 = { subject: ['science', 'art', 'korean'] }
-const strange = { hello: 'hi' }
+type Name = string;
+type Age = number;
+type Person = Name | Age;
 
-console.log(foo(철수쌤))
-console.log(foo(영희쌤))
-console.log(foo(민수쌤))
-// console.log(foo(strange))
+type PosX = { x: number };
+type PosY = { y: number };
+type Pos = PosX & PosY;
+
+const p: Pos = { x: 3, y: 4 };
+
+type Atype = number;
+type Atype = string; // Error
