@@ -1,18 +1,12 @@
-let username: 'EG' | 'ZG';
-username = 'EG';
-username = 'ZG';
-username = 'GG'; // Error
+type FooType = (a: string) => number;
 
-function foo(a: '가위' | '바위' | '보'): ('가위' | '바위' | '보')[] {
-    return ['바위', '보']
+const foo: FooType = (a) => {
+    return 0
 }
 
-const obj = {
-    name: 'kim'
-} as const
 
-function boo(a: 'kim') {
-
+type Member = {
+    name: string,
+    plusOne: (a: number) => number,
+    changeName: () => void
 }
-
-boo(obj.name); // Error
