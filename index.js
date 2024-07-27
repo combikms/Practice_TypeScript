@@ -1,8 +1,13 @@
-let a = 'a';
-let b = 1;
-const gf = {
-    name: "Sena",
-    age: 22
+let username;
+username = 'EG';
+username = 'ZG';
+username = 'GG'; // Error
+function foo(a) {
+    return ['바위', '보'];
+}
+const obj = {
+    name: 'kim'
 };
-gf.name = 'Samantha'; // Error
-const p = { x: 3, y: 4 };
+function boo(a) {
+}
+boo(obj.name); // Error

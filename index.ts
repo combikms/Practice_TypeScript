@@ -1,29 +1,18 @@
-type Mytype = string | number | undefined;
-let a: Mytype = 'a';
-let b: Mytype = 1;
+let username: 'EG' | 'ZG';
+username = 'EG';
+username = 'ZG';
+username = 'GG'; // Error
 
-type Gf = {
-    readonly name: string,
-    age: number,
-    region?: string
-};
-
-const gf: Gf = {
-    name: "Sena",
-    age: 22
+function foo(a: '가위' | '바위' | '보'): ('가위' | '바위' | '보')[] {
+    return ['바위', '보']
 }
 
-gf.name = 'Samantha' // Error
+const obj = {
+    name: 'kim'
+} as const
 
-type Name = string;
-type Age = number;
-type Person = Name | Age;
+function boo(a: 'kim') {
 
-type PosX = { x: number };
-type PosY = { y: number };
-type Pos = PosX & PosY;
+}
 
-const p: Pos = { x: 3, y: 4 };
-
-type Atype = number;
-type Atype = string; // Error
+boo(obj.name); // Error
