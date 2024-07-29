@@ -1,27 +1,17 @@
-let title = document.querySelector('#title');
-
-// if (title != null) {
-//     title.innerHTML = '반가워요'
-// }
-
-// if (title instanceof Element) {
-//     title.innerHTML = '반가워요'
-// }
-
-if (title?.innerHTML) {
-    title.innerHTML = '반가워요'
+interface Student {
+    name: string;
+}
+interface Student {
+    score: number;
 }
 
-
-
-let link = document.querySelector('.link')
-if (link instanceof HTMLAnchorElement) {
-    link.href = 'https://kakao.com/'
+interface Teacher extends Student {
+    age: number;
 }
 
+const student: Student = { name: 'kim', score: 100 };
+const teacher: Teacher = { name: 'park', score: 90, age: 30 }
 
 
-let btn = document.querySelector('#button')
-btn?.addEventListener('click', () => {
-
-})
+type Animal = { name: string };
+type Cat = { age: number } & Animal;
