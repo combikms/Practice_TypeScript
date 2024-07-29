@@ -1,22 +1,17 @@
-const foo = (s) => {
-    if (s[0] == '0') {
-        return s.slice(1);
-    }
-    else {
-        return s;
-    }
-};
-const boo = (s) => {
-    let newStr = '';
-    for (let i = 0; i < s.length; i++) {
-        if (s[i] != '-') {
-            newStr += s[i];
-        }
-    }
-    return parseInt(newStr);
-};
-console.log(boo('10-9999-88-777'));
-const baz = (a, b, c) => {
-    console.log(c(b(a)));
-};
-baz('1234-567-89', foo, boo);
+let title = document.querySelector('#title');
+// if (title != null) {
+//     title.innerHTML = '반가워요'
+// }
+// if (title instanceof Element) {
+//     title.innerHTML = '반가워요'
+// }
+if (title?.innerHTML) {
+    title.innerHTML = '반가워요';
+}
+let link = document.querySelector('.link');
+if (link instanceof HTMLAnchorElement) {
+    link.href = 'https://kakao.com/';
+}
+let btn = document.querySelector('#button');
+btn?.addEventListener('click', () => {
+});

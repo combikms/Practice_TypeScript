@@ -1,28 +1,27 @@
-type cutZero = (s: string) => string;
-type removeDash = (s: string) => number;
+let title = document.querySelector('#title');
 
-const foo: cutZero = (s) => {
-    if (s[0] == '0') {
-        return s.slice(1)
-    } else {
-        return s
-    }
+// if (title != null) {
+//     title.innerHTML = '반가워요'
+// }
+
+// if (title instanceof Element) {
+//     title.innerHTML = '반가워요'
+// }
+
+if (title?.innerHTML) {
+    title.innerHTML = '반가워요'
 }
 
-const boo: removeDash = (s) => {
-    let newStr = ''
-    for (let i = 0; i < s.length; i++) {
-        if (s[i] != '-') {            
-            newStr += s[i]
-        }
-    }
-    return parseInt(newStr)
+
+
+let link = document.querySelector('.link')
+if (link instanceof HTMLAnchorElement) {
+    link.href = 'https://kakao.com/'
 }
 
-console.log(boo('10-9999-88-777'));
 
-const baz = (a: string, b: cutZero, c: removeDash) => {
-    console.log(c(b(a)))
-}
 
-baz('1234-567-89', foo, boo)
+let btn = document.querySelector('#button')
+btn?.addEventListener('click', () => {
+
+})
