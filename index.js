@@ -1,2 +1,11 @@
-const student = { name: 'kim', score: 100 };
-const teacher = { name: 'park', score: 90, age: 30 };
+;
+const obj = {
+    plus(a, b) {
+        return a + b;
+    },
+    minus(a, b) {
+        return a - b;
+    }
+};
+console.log(obj.plus(2, 3));
+console.log(obj.minus(6, 2));

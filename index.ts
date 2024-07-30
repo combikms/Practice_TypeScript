@@ -1,17 +1,16 @@
-interface Student {
-    name: string;
+interface Foo {
+    plus(a: number, b: number): number
+    minus(a: number, b: number): number
+};
+
+const obj: Foo = {
+    plus(a, b) {
+        return a + b
+    },
+    minus(a, b) {
+        return a - b
+    }
 }
-interface Student {
-    score: number;
-}
 
-interface Teacher extends Student {
-    age: number;
-}
-
-const student: Student = { name: 'kim', score: 100 };
-const teacher: Teacher = { name: 'park', score: 90, age: 30 }
-
-
-type Animal = { name: string };
-type Cat = { age: number } & Animal;
+console.log(obj.plus(2, 3))
+console.log(obj.minus(6, 2))
