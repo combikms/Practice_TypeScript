@@ -1,30 +1,10 @@
-function foo(animal) {
-    if ('swim' in animal) {
-        console.log("This is fish.");
-    }
-    else {
-        console.log("This is bird.");
-    }
-}
-const a1 = { swim: 'aaa' };
-const a2 = { fly: 'aaa' };
-foo(a1);
-foo(a2);
-function boo(x) {
-    if (x.wheels === '4') {
-        console.log('This is car.');
-    }
-    else {
-        console.log('This is bike.');
+class User {
+    name;
+    familyName = 'kim';
+    constructor(name) {
+        this.name = this.familyName + ' ' + name;
     }
 }
-const c = {
-    wheels: '4',
-    color: 'white'
-};
-const b = {
-    wheels: '2',
-    color: 'white'
-};
-boo(c);
-boo(b);
+const u1 = new User('gilsan');
+console.log(u1.name);
+u1.familyName = 'park'; // Error: 가족 성씨는 private하여 자식이 못 바꿈
