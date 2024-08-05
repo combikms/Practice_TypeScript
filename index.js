@@ -1,8 +1,24 @@
-const Foo = (x) => x[0];
-let a = Foo([4, 2]);
-let b = Foo(['Fire', 'Wind']);
-console.log(a + 1);
-console.log(b.length);
-const Boo = (x) => x - 1;
-let c = Boo(100);
-console.log(c);
+// const foo = <T extends string | string[]>(data: T): number => {
+//     return data.length;
+// }
+// let a = foo<string>("hello");
+// let b = foo<string[]>(['kim', 'park']);
+// console.log(a);
+// console.log(b);
+// interface Animal {
+//     name: string;
+//     age: number
+// }
+// const boo = <T>(a: string): T => {
+//     return JSON.parse(a);
+// }
+// let data = '{"name" : "dog", "age" : 1 }';
+// const result = boo<Animal>(data);
+// console.log(result);
+class Person {
+    name;
+    constructor(a) {
+        this.name = a;
+    }
+}
+let a = new Person('어쩌구');

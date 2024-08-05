@@ -1,13 +1,30 @@
-const Foo = <T>(x: T[]): T => x[0];
+// const foo = <T extends string | string[]>(data: T): number => {
+//     return data.length;
+// }
 
-let a = Foo<number>([4, 2]);
-let b = Foo<string>(['Fire', 'Wind']);
+// let a = foo<string>("hello");
+// let b = foo<string[]>(['kim', 'park']);
 
-console.log(a + 1);
-console.log(b.length);
+// console.log(a);
+// console.log(b);
 
+// interface Animal {
+//     name: string;
+//     age: number
+// }
 
+// const boo = <T>(a: string): T => {
+//     return JSON.parse(a);
+// }
 
-const Boo = <T extends number>(x: T) => x - 1;
-let c = Boo<number>(100);
-console.log(c)
+// let data = '{"name" : "dog", "age" : 1 }';
+// const result = boo<Animal>(data);
+// console.log(result);
+
+class Person<T> {
+    name: T;
+    constructor(a: T) {
+        this.name = a;
+    }
+}
+let a = new Person<string>('어쩌구');
