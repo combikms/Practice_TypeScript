@@ -1,30 +1,38 @@
-// const foo = <T extends string | string[]>(data: T): number => {
-//     return data.length;
-// }
+// const bark: [string, boolean] = ['dog', true];
+// const myeow: [string, boolean?] = ['cat']
+// const moo: [string, boolean?, number] = ['cow'] // Error
 
-// let a = foo<string>("hello");
-// let b = foo<string[]>(['kim', 'park']);
 
-// console.log(a);
-// console.log(b);
+// const foo = (...rest: [number, string, boolean]) => console.log(rest);
+// foo(1, 'A', false);
 
-// interface Animal {
-//     name: string;
-//     age: number
-// }
 
-// const boo = <T>(a: string): T => {
-//     return JSON.parse(a);
-// }
+// const arr = [1, 2, 3];
+// const arr2: [number, number, ...number[]] = [4, 5, ...arr];
 
-// let data = '{"name" : "dog", "age" : 1 }';
-// const result = boo<Animal>(data);
-// console.log(result);
 
-class Person<T> {
-    name: T;
-    constructor(a: T) {
-        this.name = a;
-    }
+// const arr: [string, number, boolean] = ['chicken', 9400, true]
+
+
+// const arr: [string, number, ...boolean[]] = ['chicken', 9400, true, false, true, true, false, true]
+
+
+// const foo = (a: string, b: boolean, ...c: (string | number)[]) => { };
+// const boo = (...rest: [string, boolean, ...(string | number)[]]) => { };
+// foo('a', true, 6, 3, '1', 4);
+// boo('a', true, 6, 3, '1', 4);
+
+const bar = (...rest: (string | number)[]): [string[], number[]] => {
+    const num: number[] = []
+    const str: string[] = []
+    rest.forEach((a) => {
+        if (typeof a === 'number') {
+            num.push(a);
+        } else {
+            str.push(a);
+        }
+    })
+    return [str, num];
 }
-let a = new Person<string>('어쩌구');
+
+console.log(bar('b', 5, 6, 8, 'a'));
