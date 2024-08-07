@@ -1,2 +1,3 @@
-declare let a: number;
+let a = 10;
 console.log(a + 1);
+let b: Dog = "bark";
