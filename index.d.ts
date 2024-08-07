@@ -1,17 +1,6 @@
-interface StringOnly {
-    [key: string]: string;
-}
-declare const user: StringOnly;
-interface MyType {
-    'font-size': MyType | number;
-}
-declare const css: MyType;
-interface Car {
-    [key: string]: number | string;
-}
-declare const obj: Car;
-interface StrangeType {
-    'font-size': number;
-    [key: string]: StrangeType | number;
-}
-declare const obj2: StrangeType;
+type Age<T> = T extends any[] ? (T[0] extends string ? string : unknown) : unknown;
+declare let age1: Age<[string, number]>;
+declare let age2: Age<[boolean, number]>;
+type TypeExtract<T> = T extends (x: infer R) => void ? R : unknown;
+declare let a: TypeExtract<(x: number) => void>;
+declare let b: TypeExtract<(x: string) => void>;

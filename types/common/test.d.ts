@@ -1,4 +1,4 @@
-type Age = number;
-interface Person {
-    name: string
-}
+// type Age = number;
+// interface Person {
+//     name: string
+// }
