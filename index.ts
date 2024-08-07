@@ -1,3 +1,2 @@
-let a = 10;
-console.log(a + 1);
-let b: Dog = "bark";
+let age: Age = 30;
+$().append();
